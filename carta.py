@@ -12,7 +12,7 @@ class Carta():
     
     @palo.setter
     def palo(self, new_palo):
-        self.palo = new_palo
+        self.__palo = new_palo
 
     @property
     def valor(self):
@@ -20,7 +20,7 @@ class Carta():
     
     @valor.setter
     def valor(self, new_valor):
-        self.valor = new_valor
+        self.__valor = new_valor
 
     @property
     def jerarquia(self):
@@ -28,7 +28,7 @@ class Carta():
     
     @jerarquia.setter
     def jerarquia(self, new_jerarquia):
-        self.jerarquia = new_jerarquia
+        self.__jerarquia = new_jerarquia
         
 
 
