@@ -43,16 +43,16 @@ class Ronda():
         self.mano = mano
 
     def determinar_ganador(self):
-        if (self.mano.determinar_ganador() == self.mano.jugador_1):
-             self.mano.jugador_1.manos_ganadas = self.mano.jugador_1.manos_ganadas + 1
-        else:
-             self.mano.jugador_2.manos_ganadas = self.mano.jugador_2.manos_ganadas + 1
+        # if (self.mano.determinar_ganador() == self.mano.jugador_1):
+        #      self.mano.jugador_1.manos_ganadas = self.mano.jugador_1.manos_ganadas + 1
+        # else:
+        #      self.mano.jugador_2.manos_ganadas = self.mano.jugador_2.manos_ganadas + 1
 
-        if self.mano.jugador_1.manos_ganadas == 1:
+        if self.mano.jugador_1.manos_ganadas > 1:
             self.mano.jugador_1.rondas_ganadas = self.mano.jugador_1.rondas_ganadas + 1
             self.ganador = self.mano.jugador_1
             return self.mano.jugador_1
-        elif self.mano.jugador_2.manos_ganadas == 1:
+        elif self.mano.jugador_2.manos_ganadas > 1:
             self.ganador = self.mano.jugador_2
             self.mano.jugador_2.rondas_ganadas = self.mano.jugador_2.rondas_ganadas + 1
             return self.mano.jugador_2

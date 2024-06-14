@@ -33,4 +33,4 @@ class Carta():
 
 
     def __str__(self) -> str:
-        return f"La carta es el {self.valor} de {self.palo} [{self.jerarquia}]"
+        return f"{self.valor} de {self.palo} [{self.jerarquia}]"

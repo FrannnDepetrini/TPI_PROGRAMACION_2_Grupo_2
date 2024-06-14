@@ -43,10 +43,12 @@ class Partida():
         #     else:
         #         ronda.mano.jugador_2.rondas_ganadas = ronda.mano.jugador_2.rondas_ganadas + 1
         self.rondas[0].determinar_ganador()     
-        if self.rondas[0].mano.jugador_1.rondas_ganadas == 1:
+        if self.rondas[0].mano.jugador_1.rondas_ganadas == 15:
             return self.rondas[0].mano.jugador_1
-        else:
+        elif self.rondas[0].mano.jugador_2.rondas_ganadas == 15:
             return self.rondas[0].mano.jugador_2
+        else:
+            pass
         
 
 # jugador1 = Jugador('Francisco', True, True)

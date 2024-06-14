@@ -9,8 +9,7 @@ class Mazo():
 
     @property
     def cartas_genericas(self):
-        self.__cartas_genericas = sorted(
-            self.__cartas_genericas, key=lambda x: x.jerarquia, reverse=True)
+        self.__cartas_genericas = sorted(self.__cartas_genericas, key=lambda x: x.jerarquia, reverse=True)
         return self.__cartas_genericas
 
     @cartas_genericas.setter
@@ -34,18 +33,25 @@ class Mazo():
         self.cartas.remove(carta)
 
     def reset_mazo(self):
-        self.cartas = self.cartas_genericas
+        self.cartas.clear()
+        self.cartas.extend(self.cartas_genericas)
 
     def crear_mazo(self, cartas: list):
         self.cartas.extend(cartas)
         self.cartas_genericas.extend(cartas)
 
     def barajar(self):
+        self.reset_mazo()
         random.shuffle(self.cartas)
     
     def repartir(self) -> list: 
+        cartas = []
         from generador_carta import Generador_cartas
-        return Generador_cartas.generar_carta(self)
+        cartas = Generador_cartas.generar_carta(self)
+
+        return cartas
+    
+        
         
 
 

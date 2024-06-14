@@ -17,5 +17,6 @@ class Generador_cartas():
         return cls.cartas_seleccionadas
     
 
-   
-
+    @classmethod
+    def limpiar_datos(cls):
+        cls.cartas_seleccionadas.clear()

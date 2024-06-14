@@ -78,9 +78,16 @@ class Jugador():
     def __str__(self):
         return f"{self.nombre}"
 
-    def tirar_carta(self, carta) : #Carta
+    def tirar_carta(self, carta) :
         self.cartas.remove(carta)
         return carta
+      
+
+    def tirar_carta_bot(self):
+        return self.cartas.pop()
+
+
+
 
     def recibir_carta(self):
         from datos import mazo
