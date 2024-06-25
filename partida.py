@@ -36,12 +36,7 @@ class Partida():
     def iniciar_ronda(self, ronda:Ronda):
          self.rondas.append(ronda)
 
-    def determinar_ganador(self):
-        # for ronda in self.rondas:
-        #     if ronda.determinar_ganador == ronda.mano.jugador_1:
-        #          ronda.mano.jugador_1.rondas_ganadas = ronda.mano.jugador_1.rondas_ganadas + 1
-        #     else:
-        #         ronda.mano.jugador_2.rondas_ganadas = ronda.mano.jugador_2.rondas_ganadas + 1
+    def determinar_ganador(self): 
         self.rondas[0].determinar_ganador()     
         if self.rondas[0].mano.jugador_1.rondas_ganadas == 15:
             return self.rondas[0].mano.jugador_1
@@ -51,13 +46,3 @@ class Partida():
             pass
         
 
-# jugador1 = Jugador('Francisco', True, True)
-# jugador2 = Jugador('RobotIA')
-
-
-# partida = Partida()
-# partida.iniciar_ronda(Ronda(Mano(jugador1,jugador2, [Carta('Espada', 1, 14), Carta('Basto', 1, 13) ])))
-# for ronda in partida.rondas:
-#     ronda.determinar_ganador()
-#     print(ronda)
-# # print(partida.determinar_ganador())

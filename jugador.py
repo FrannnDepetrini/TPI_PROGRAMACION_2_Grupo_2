@@ -6,7 +6,7 @@ class Jugador():
     def __init__(self, nombre:str, puntos:int = 0, suTurno:bool= False, esJugador:bool = False ) -> None:
         self.__nombre = nombre
         self.__puntos = puntos
-        self.__cartas = [] #List[Carta]
+        self.__cartas = [] 
         self.__manos_ganadas = 0
         self.__rondas_ganadas = 0
         self.__suTurno = suTurno
@@ -71,9 +71,7 @@ class Jugador():
     
     
 
-    # METODOS
-    # def jugar(self):
-    #     pass
+   
 
     def __str__(self):
         return f"{self.nombre}"
@@ -83,9 +81,7 @@ class Jugador():
         return carta
       
 
-    def tirar_carta_bot(self):
-        return self.cartas.pop()
-
+    
 
 
 
@@ -93,10 +89,6 @@ class Jugador():
         from datos import mazo
         self.cartas.extend(mazo.repartir())
 
-    # def cantar_truco(self):
-    #     pass
- 
-    # def responder_truco(self):
-    #     pass
+    
 
     

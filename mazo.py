@@ -4,7 +4,7 @@ import random
 
 class Mazo():
     def __init__(self) -> None:
-        self.__cartas = []  # List[Carta]
+        self.__cartas = []  
         self.__cartas_genericas = []
 
     @property

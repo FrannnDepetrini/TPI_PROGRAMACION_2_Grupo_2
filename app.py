@@ -27,7 +27,7 @@ def turnoJugador1():
     print(f"Tiraste el {cartaTiradaJugador1}")
     
     # JUGADOR_BOT
-    cartaTiradaJugador2 = jugador2.tirar_carta_bot()
+    cartaTiradaJugador2 = jugador2.tirar_carta()
     print(f"{jugador2} tiro {cartaTiradaJugador2}")
 
     lista_turno_jugador1.append(cartaTiradaJugador1)
@@ -40,7 +40,7 @@ def turnoJugador2():
     lista_turno_jugador2 = []
     
     # JUGADOR_BOT
-    cartaTiradaJugador2 = jugador2.tirar_carta_bot()
+    cartaTiradaJugador2 = jugador2.tirar_carta()
     print(f"{jugador2} tiro {cartaTiradaJugador2}")
     # JUGADOR_HUMANO
     print("Tus cartas son:")
@@ -98,8 +98,6 @@ while True:
 
             
             ronda.mano.determinar_ganador() # Determina el ganador de la mano
-            print(f"Mano {ronda.mano.es_mano}")
-            print(f"Primera {ronda.mano.ganador_primera}")
             print("\n")
             if jugador1.manos_ganadas > 1 or jugador2.manos_ganadas > 1:
 
@@ -110,6 +108,7 @@ while True:
                 print(f"Yo: {jugador1.rondas_ganadas}")
                 print("-"*50)
                 print(f"RobotIA: {jugador2.rondas_ganadas}")
+                print("\n")
 
                 if (ronda.mano.es_mano == jugador1.nombre):
                     jugador1.suTurno = False

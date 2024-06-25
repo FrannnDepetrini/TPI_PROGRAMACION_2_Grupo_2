@@ -4,6 +4,7 @@ from ronda import Ronda
 from jugador import Jugador
 from partida import Partida
 from mano import Mano
+from robotIA import RobotIA
 
 mazo = Mazo()
 
@@ -62,41 +63,9 @@ mazo.crear_mazo(mazoGenerico)
 
 
 
-# mazo.barajar()
-# for carta in mazo.cartas:
-#     print(carta)
-# print("-" *50)
 
+jugador2 = RobotIA('RobotIA')
 
-# for carta in mazo.repartir():
-#     print(carta)
-# print("-" *50)
-# for carta in mazo.cartas:
-#     print(carta)
-
-# print("-" *50)
-
-
-# mazo.reset_mazo()
-# for carta in mazo.cartas:
-#     print(carta)
-
-# for i in range(16):
-#     ronda = Ronda(Mano(Jugador('Francisco', True, True ),Jugador('RobotIA'), ['1 de espada', '1 de copa']))
-
-# jugador1 = Jugador('Francisco', True, True)
-jugador2 = Jugador('RobotIA')
-
-
-# partida = Partida()
-# partida.iniciar_ronda(Ronda(Mano(jugador1,jugador2, [Carta('Espada', 7, 12), Carta('Basto', 1, 13) ])))
-
-# print(partida.determinar_ganador())
-# print(jugador1.manos_ganadas)
-# print(jugador1.rondas_ganadas)
-# print("-"*50)
-# print(jugador2.manos_ganadas)
-# print(jugador2.rondas_ganadas)
 
 
 
