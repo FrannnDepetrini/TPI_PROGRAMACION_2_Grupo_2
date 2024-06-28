@@ -1,8 +1,8 @@
 from jugador import Jugador
 
 class RobotIA(Jugador):
-    def __init__(self, nombre: str, puntos: int = 0, suTurno: bool = False, esJugador: bool = False) -> None:
-        super().__init__(nombre, puntos, suTurno, esJugador)
+    def __init__(self, nombre: str, suTurno: bool = False, ) -> None:
+        super().__init__(nombre, suTurno)
 
 
 

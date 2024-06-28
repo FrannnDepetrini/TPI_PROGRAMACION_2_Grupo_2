@@ -3,14 +3,13 @@
 
 class Jugador():
 
-    def __init__(self, nombre:str, puntos:int = 0, suTurno:bool= False, esJugador:bool = False ) -> None:
+    def __init__(self, nombre:str,suTurno:bool= False) -> None:
         self.__nombre = nombre
-        self.__puntos = puntos
         self.__cartas = [] 
         self.__manos_ganadas = 0
         self.__rondas_ganadas = 0
         self.__suTurno = suTurno
-        self.__esJugador = esJugador
+        
 
 
     @property
@@ -21,13 +20,6 @@ class Jugador():
     def nombre(self, new_nombre):
         self.__nombre = new_nombre
 
-    @property
-    def puntos(self):
-        return self.__puntos
-
-    @puntos.setter
-    def puntos(self, new_puntos):
-        self.__puntos = new_puntos
 
     @property
     def cartas(self):
@@ -60,17 +52,7 @@ class Jugador():
     @suTurno.setter
     def suTurno(self, new_suTurno):
         self.__suTurno = new_suTurno
-    
-    @property
-    def esJugador(self):
-        return self.__esJugador
-
-    @esJugador.setter
-    def esJugador(self, new_esJugador):
-        self.__esJugador = new_esJugador
-    
-    
-
+   
    
 
     def __str__(self):

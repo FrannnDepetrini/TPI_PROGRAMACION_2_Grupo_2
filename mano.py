@@ -19,7 +19,10 @@ class Mano():
     def nro(self):
         return self.__nro    
 
-   
+    @nro.setter
+    def nro(self, new_nro):
+        self.__nro = new_nro
+
     @property
     def jugador_1(self):
         return self.__jugador_1
@@ -67,8 +70,6 @@ class Mano():
     @classmethod
     def contador(cls):
         cls.__prox_nro = cls.__prox_nro + 1
-        if cls.__prox_nro > 3:
-               cls.__prox_nro = 1
         return cls.__prox_nro
     
     
@@ -76,23 +77,23 @@ class Mano():
         return f"{self.ganador_mano}"
 
     def determinar_ganador(self) :
-        if self.jugador_1.manos_ganadas == 0 and self.jugador_2.manos_ganadas == 0:
+        if self.nro == 1:
             if self.jugador_1.suTurno:
                 Mano.__es_mano = self.jugador_1
             else:
                 Mano.__es_mano = self.jugador_2
  
-        if self.jugador_1.suTurno == True and self.cartas_jugadas[0].jerarquia > self.cartas_jugadas[1].jerarquia:
+        if self.jugador_1.suTurno  and self.cartas_jugadas[0].jerarquia > self.cartas_jugadas[1].jerarquia:
             self.ganador_mano = self.jugador_1
             self.jugador_1.suTurno = True
             self.jugador_2.suTurno = False
             self.jugador_1.manos_ganadas = self.jugador_1.manos_ganadas + 1
             if self.nro == 1:
                 Mano.__ganadorPrimera = self.jugador_1
-            if Mano.__huboParda == True and self.nro == 2 or self.nro == 3 :
+            if Mano.__huboParda  and self.nro == 2 or self.nro == 3 :
                 self.jugador_1.manos_ganadas = 2
-                self.limpiar()
-                pass
+                
+                
             Mano.__huboParda = False
         elif  self.jugador_1.suTurno == False and self.cartas_jugadas[1].jerarquia > self.cartas_jugadas[0].jerarquia:
             self.ganador_mano = self.jugador_1
@@ -101,21 +102,21 @@ class Mano():
             self.jugador_1.manos_ganadas = self.jugador_1.manos_ganadas + 1
             if self.nro == 1:
                 Mano.__ganadorPrimera = self.jugador_1
-            if Mano.__huboParda == True and self.nro == 2 or self.nro == 3 :
+            if Mano.__huboParda  and self.nro == 2 or self.nro == 3 :
                 self.jugador_1.manos_ganadas = 2
-                self.limpiar()
-                pass
+                
+                
             Mano.__huboParda = False
-        elif self.jugador_2.suTurno == True and self.cartas_jugadas[0].jerarquia > self.cartas_jugadas[1].jerarquia:
+        elif self.jugador_2.suTurno  and self.cartas_jugadas[0].jerarquia > self.cartas_jugadas[1].jerarquia:
             self.ganador_mano = self.jugador_2
             self.jugador_2.suTurno = True
             self.jugador_1.suTurno = False
             self.jugador_2.manos_ganadas = self.jugador_2.manos_ganadas + 1
             if self.nro == 1:
                 Mano.__ganadorPrimera = self.jugador_2
-            if Mano.__huboParda == True and self.nro == 2 or self.nro == 3 :
+            if Mano.__huboParda  and self.nro == 2 or self.nro == 3 :
                 self.jugador_2.manos_ganadas = 2
-                self.limpiar()
+                
             Mano.__huboParda = False
         elif self.jugador_2.suTurno == False and self.cartas_jugadas[1].jerarquia > self.cartas_jugadas[0].jerarquia:
             self.jugador_2.suTurno = True
@@ -124,9 +125,9 @@ class Mano():
             self.jugador_2.manos_ganadas = self.jugador_2.manos_ganadas + 1
             if self.nro == 1:
                 Mano.__ganadorPrimera = self.jugador_2
-            if Mano.__huboParda == True and self.nro == 2 or self.nro == 3 :
+            if Mano.__huboParda  and self.nro == 2 or self.nro == 3 :
                 self.jugador_2.manos_ganadas = 2
-                self.limpiar()
+                
             Mano.__huboParda = False
         else:
             if self.nro == 1:
@@ -147,34 +148,34 @@ class Mano():
                         self.jugador_1.suTurno = True
                         self.jugador_2.suTurno = False
                         self.jugador_1.manos_ganadas = 2
-                        self.limpiar()
+                        
 
                     else:
                         self.jugador_2.suTurno = True
                         self.jugador_1.suTurno = False
                         self.ganador_mano = self.jugador_2
                         self.jugador_2.manos_ganadas = 2
-                        self.limpiar()
+                        
 
         return self.ganador_mano
     
     def limpiar(self):
         Mano.__prox_nro = 0
-        Mano.__es_mano = None
-        Mano.__ganadorPrimera = None
-        Mano.__huboParda = False   
+       
     def ganador_primera(self):
         if Mano.__ganadorPrimera == self.jugador_1:
             self.ganador_mano = self.jugador_1
             self.jugador_1.suTurno = True
             self.jugador_2.suTurno = False
             self.jugador_1.manos_ganadas = self.jugador_1.manos_ganadas + 1
-            self.limpiar()
+            
         else:
             self.jugador_2.suTurno = True
             self.jugador_1.suTurno = False
             self.ganador_mano = self.jugador_2
             self.jugador_2.manos_ganadas = self.jugador_2.manos_ganadas + 1
+            
+
 
                   
 

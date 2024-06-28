@@ -8,9 +8,9 @@ from robotIA import RobotIA
 
 mazo = Mazo()
 
-palos = ['Basto','Espada', 'Copa', 'Oro']
+# palos = ['Basto','Espada', 'Copa', 'Oro']
 
-valores = [1,2,3,4,5,6,7,10,11,12]
+# valores = [1,2,3,4,5,6,7,10,11,12]
 
 mazoGenerico = [
 #       ESPADA      

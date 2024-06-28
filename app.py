@@ -4,7 +4,7 @@ from generador_carta import *
 
 def loggin():
     name = input("Ingrese su nombre ")
-    jugador1 = Jugador(name, True, True)
+    jugador1 = Jugador(name, True)
     return jugador1
 
 
@@ -99,8 +99,8 @@ while True:
             
             ronda.mano.determinar_ganador() # Determina el ganador de la mano
             print("\n")
+            
             if jugador1.manos_ganadas > 1 or jugador2.manos_ganadas > 1:
-
                 jugador1.cartas.clear()
                 jugador2.cartas.clear()
 
@@ -109,8 +109,8 @@ while True:
                 print("-"*50)
                 print(f"RobotIA: {jugador2.rondas_ganadas}")
                 print("\n")
-
-                if (ronda.mano.es_mano == jugador1.nombre):
+               
+                if (ronda.mano.es_mano == jugador1):
                     jugador1.suTurno = False
                     jugador2.suTurno = True
                 else:
@@ -120,6 +120,7 @@ while True:
                 partida1.iniciar_ronda(ronda)
                 jugador1.manos_ganadas = 0
                 jugador2.manos_ganadas = 0
+                ronda.mano.limpiar()
                 mazo.barajar()
                 jugador2.recibir_carta()
                 Generador_cartas.limpiar_datos()
